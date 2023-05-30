@@ -1,0 +1,190 @@
+{
+	"identifier": "org.wiyi.plugin.transcat",
+  "version": "0.1.0",
+	"category": "translate",
+	"name": "Transcat",
+	"summary": "Transcat的Bob插件",
+	"icon": "001",
+  "icons": [
+    {
+      "identifier": "default",
+      "type": "builtIn",
+      "builtInId": "001"
+    },
+    {
+      "identifier": "baidu",
+      "type": "builtIn",
+      "builtInId": "103"
+    },
+    {
+      "identifier": "tencent",
+      "type": "builtIn",
+      "builtInId": "107"
+    },
+    {
+      "identifier": "caiyun",
+      "type": "builtIn",
+      "builtInId": "112"
+    },
+    {
+      "identifier": "google_icon",
+      "type": "builtIn",
+      "builtInId": "113"
+    },
+    {
+      "identifier": "google_trans",
+      "type": "builtIn",
+      "builtInId": "114"
+    },
+    {
+      "identifier": "deepl",
+      "type": "builtIn",
+      "builtInId": "115"
+    },
+    {
+      "identifier": "microsoft",
+      "type": "builtIn",
+      "builtInId": "121"
+    }
+  ],
+	"author": "bigbyto",
+	"homepage": "https://github.com/xingty/bob-plugin-transcat",
+	"appcast": "https://raw.githubusercontent.com/xingty/bob-plugin-transcat/main/appcast.json",
+	"minBobVersion": "0.5.0",
+	"options": [
+    {
+      "identifier": "url",
+      "type": "text",
+      "title": "URL",
+      "desc": "填写Transcat运行的地址和端口",
+      "textConfig": {
+        "placeholder": "http://127.0.0.1:8080",
+        "type": "visible",
+        "placeholderText": "transcat服务地址"
+      }
+    },
+    {
+      "identifier": "engine",
+      "type": "menu",
+      "title": "翻译引擎",
+      "defaultValue": "loadbalance",
+      "isKeyOption": true,
+      "menuValues": [
+        {
+          "title": "自动模式",
+          "value": "auto"
+        },
+        {
+          "title": "Google翻译(免费)",
+          "defaultPluginIconIdentifier": "google_icon",
+          "value": "googlex"
+        },
+        {
+          "title": "微软翻译",
+          "defaultPluginIconIdentifier": "microsoft",
+          "value": "bingx"
+        },
+        {
+          "title": "DeepLX",
+          "value": "deeplx",
+          "defaultPluginIconIdentifier": "deepl"
+        },
+        {
+          "title": "腾讯翻译君",
+          "value": "tencent",
+          "defaultPluginIconIdentifier": "tencent"
+        },
+        {
+          "title": "彩云小译",
+          "value": "caiyun",
+          "defaultPluginIconIdentifier": "caiyun"
+        },
+        {
+          "title": "百度翻译",
+          "value": "baidu",
+          "defaultPluginIconIdentifier": "baidu"
+        }
+      ],
+      "desc": "选择翻译引擎"
+    },
+    {
+      "identifier": "cache",
+      "type": "menu",
+      "title": "启用缓存",
+      "defaultValue": "yes",
+      "menuValues": [
+        {
+          "title": "是",
+          "value": "yes"
+        },
+        {
+          "title": "否",
+          "defaultPluginIconIdentifier": "google_icon",
+          "value": "no"
+        }
+      ],
+      "desc": "是否启用缓存"
+    },
+    {
+      "identifier": "type",
+      "type": "menu",
+      "title": "单词数",
+      "defaultValue": "0",
+      "menuValues": [
+        {
+          "title": "总是翻译",
+          "value": "0"
+        },
+        {
+          "title": "1",
+          "value": "1"
+        },
+        {
+          "title": "2",
+          "value": "2"
+        },
+        {
+          "title": "3",
+          "value": "3"
+        },
+        {
+          "title": "4",
+          "value": "4"
+        },
+        {
+          "title": "5",
+          "value": "5"
+        },
+        {
+          "title": "6",
+          "value": "6"
+        },
+        {
+          "title": "7",
+          "value": "7"
+        },
+        {
+          "title": "8",
+          "value": "8"
+        },
+        {
+          "title": "9",
+          "value": "9"
+        },
+        {
+          "title": "10",
+          "value": "10"
+        },
+        {
+          "title": "15",
+          "value": "15"
+        },
+        {
+          "title": "20",
+          "value": "20"
+        }
+      ],
+      "desc": "单词数小于这个值插件不翻译"
+    }
+	]
+}
