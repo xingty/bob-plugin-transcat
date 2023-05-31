@@ -25,11 +25,22 @@ async function doQuery(body,url) {
         message: JSON.stringify(result)
       });
     }
+
     return Promise.resolve({
       toParagraphs: [result.data]
     });
   } catch(err) {
-    return Promise.reject(err);
+    let message = err.message;
+    let data = err.cause.data || {};
+    if (data.code == 410) {
+      message = `找不到翻译引擎:${$option.engine}, 请检查Transcat服务端是否配置了${$option.engine}`
+    }
+
+    return Promise.reject({
+      type: err.type,
+      message: message,
+      cause: err.cause
+    })
   }
 }
 
