@@ -18,10 +18,6 @@ if [[ -z  desc ]]; then
   desc="Release v$version"
 fi
 
-cv=$(cat appcast.json | grep '"version"' | awk -F\" 'NR==1 {print $4}')
-echo "Current version: $cv, build version: $version"
-/bin/bash ./build.sh $version
-
 ln=$(cat appcast.json | grep -n "\"$version\""|awk -F: 'NR==1{print $1}')
 sha256=$(sha256sum ./build/bob-plugin-transcat-v$version.bobplugin | awk '{print $1}')
 echo "sha256: $sha256"
@@ -46,3 +42,6 @@ if [[ $vln -gt 0 ]]; then
   fi
 fi
 
+cv=$(cat appcast.json | grep '"version"' | awk -F\" 'NR==1 {print $4}')
+echo "Current version: $cv, build version: $version"
+/bin/bash ./build.sh $version
