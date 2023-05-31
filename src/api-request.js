@@ -17,7 +17,13 @@ function query(body,url,method='POST',header=HEADER) {
             type: resp.error.statusCode === 500 ? 'api' : 'network',
             message: resp.error.localizedDescription,
             addtion: resp.error.localizedDescription,
-            cause: resp.error
+            cause: resp
+          });
+        } else if (resp.response.statusCode !== 200) {
+          reject({
+            type: 'api',
+            message: resp.response.statusCode == 500 ? 'server internal error' : 'network error',
+            cause: resp
           });
         } else if (!resp.data) {
           reject({
