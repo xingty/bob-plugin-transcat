@@ -10,7 +10,7 @@ async function translate(query, completion) {
 	let src = query.detectFrom.toLowerCase();
 	let dst = query.detectTo.toLowerCase();
 
-	let map = config.langMap[$option.engine];
+	let map = config.langMap[$option.engine] || {};
 	const lang = map[src] || map['any'];
 	if (!lang || (lang.indexOf(dst) === -1 && lang.indexOf('any') === -1)) {
 		completion({

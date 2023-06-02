@@ -176,6 +176,7 @@ const langMap = {
     "ar": ["en"],
     "hi": ["en"]
   },
+  bingx: common,
   deeplx: common,
   googlex: common,
 }
