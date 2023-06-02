@@ -6,20 +6,22 @@ function supportLanguages() {
 	return config.supportedLanguages.map(([standardLang]) => standardLang);
 }
 
-var langMap = new Map(config.supportedLanguages);
-// var langMapReverse = new Map(config.supportedLanguages.map(([standardLang, lang]) => [lang, standardLang]));
-
 async function translate(query, completion) {
-	const supportedLanguages = langMap.get(query.detectTo);
-	const from = query.detectFrom;
-	if (!supportedLanguages) {
+	let src = query.detectFrom.toLowerCase();
+	let dst = query.detectTo.toLowerCase();
+
+	let map = config.langMap[$option.engine];
+	const lang = map[src] || map['any'];
+	if (!lang || (lang.indexOf(dst) === -1 && lang.indexOf('any') === -1)) {
 		completion({
 			error: {
 				type: 'unsupportLanguage',
 				message: '不支持该语种'
 			}
 		});
-	}	
+		return;
+	}
+	const from = query.detectFrom;
 
 	const wordNumbers = parseInt($option.type);
 	const text = query.text;
@@ -27,7 +29,7 @@ async function translate(query, completion) {
 		completion({
 			error: {
 				type: 'unsupportLanguage',
-				message: '翻译的单词超过设置的数量上限'
+				message: '忽略简单的单词和词组'
 			}
 		});
 		return;
@@ -40,7 +42,7 @@ async function translate(query, completion) {
 		})
 	} catch(err) {
 		let type = err.type || 'unknown';
-		let message = err.message || '未知错误222';
+		let message = err.message || '未知错误';
 		completion({
 			error: {
 				type,

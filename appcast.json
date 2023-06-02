@@ -2,6 +2,13 @@
   "identifier": "org.wiyi.plugin.transcat",
   "versions": [
     {
+     "version": "0.1.2",
+      "desc": "",
+      "sha256": "0b44487a8985b6d46ff8b8b381f2c89f37e19ec5cfbe4699f3b898ad1a11aeee",
+      "url": "https://github.com/xingty/bob-plugin-transcat/releases/download/v0.1.2/bob-plugin-transcat-v0.1.2.bobplugin",
+      "minBobVersion": "0.5.0"
+    },
+    {
      "version": "0.1.0",
       "desc": "v0.1.0",
       "sha256": "d26bf3e0c12321afb280f1c97c3a1f046572eebe5bb9959ad43a57221c82e0b2",

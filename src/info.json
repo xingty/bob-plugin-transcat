@@ -1,6 +1,6 @@
 {
 	"identifier": "org.wiyi.plugin.transcat",
-  "version": "0.1.0",
+  "version": "0.1.2",
 	"category": "translate",
 	"name": "Transcat",
 	"summary": "Transcat的Bob插件",

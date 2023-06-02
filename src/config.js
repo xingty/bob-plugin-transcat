@@ -41,8 +41,6 @@ const supportedLanguages = [
   ["gl", "gl"],
   ["gu", "gu"],
   ["ha", "ha"],
-  ["he", "he"],
-  ["hi", "hi"],
   ["hr", "hr"],
   ["ht", "ht"],
   ["hu", "hu"],
@@ -110,7 +108,77 @@ const supportedLanguages = [
   ["zu", "zu"],
 ];
 
+const common = {
+  "auto": ["any"],
+  "zh": ["any"],
+  "zh-hans": ["any"],
+  "zh-hant": ["any"],
+  "en": ["any"],
+  "ja": ["zh", "zh-hant","en", "ko"],
+  "ko": ["zh", "zh-hant","en", "ja"],
+  "fr": ["any"],
+  "es": ["any"],
+  "it": ["any"],
+  "de": ["any"],
+  "tr": ["any"],
+  "ru": ["any"],
+  "pt": ["any"],
+  "vi": ["any"],
+  "id": ["any"],
+  "th": ["any"],
+  "ms": ["any"],
+  "ar": ["en"],
+  "hi": ["en"]
+}
 
+const langMap = {
+  auto: {
+    "any": ["any"]
+  },
+  caiyun: {
+    "en": ["zh-hans","zh","zh-hant"],
+    "zh-hans": ["en","ja"],
+    "zh": ["en","ja"],
+    "zh-hant": ["en","ja"],
+    "ja": ["zh-hans","zh","zh-hant"]
+  },
+  baidu: {
+    "en": ["zh", "ja", "ko", "fr", "es", "it", "de", "ru", "pt", "vi", "ar"],
+    "zh": ["en","ja","ko"],
+    "zh-hans": ["en","ja","ko"],
+    "zh-hant": ["en","ja","ko"],
+    "ja": ["zh", "zh-hant","en", "ko"],
+    "ko": ["zh", "zh-hant","en", "ja"],
+    "fr": ["zh", "zh-hant","en", "es", "it", "de", "ru", "pt"],
+    "es": ["zh", "zh-hant","en", "fr", "it", "de", "ru", "pt"],
+    "it": ["zh", "zh-hant","en", "fr", "es", "de", "ru", "pt"],
+    "de": ["zh", "zh-hant","en", "fr", "es", "it", "ru", "pt"]
+  },
+  tencent: {
+    "auto": ["any"],
+    "zh": ["en", "ja", "ko", "fr", "es", "it", "de", "tr", "ru", "pt", "vi", "id", "th", "ms"],
+    "zh-hans": ["en", "ja", "ko", "fr", "es", "it", "de", "tr", "ru", "pt", "vi", "id", "th", "ms"],
+    "zh-hant": ["en", "ja", "ko", "fr", "es", "it", "de", "tr", "ru", "pt", "vi", "id", "th", "ms"],
+    "en": ["zh", "zh-hant","zh-hans","ja", "ko", "fr", "es", "it", "de", "tr", "ru", "pt", "vi", "id", "th", "ms", "ar", "hi"],
+    "ja": ["zh", "zh-hant","zh-hans","en", "ko"],
+    "ko": ["zh", "zh-hant","zh-hans","en", "ja"],
+    "fr": ["zh", "zh-hant","zh-hans","en", "es", "it", "de", "tr", "ru", "pt"],
+    "es": ["zh", "zh-hant","zh-hans","en", "fr", "it", "de", "tr", "ru", "pt"],
+    "it": ["zh", "zh-hant","zh-hans","en", "fr", "es", "de", "tr", "ru", "pt"],
+    "de": ["zh", "zh-hant","zh-hans","en", "fr", "es", "it", "tr", "ru", "pt"],
+    "tr": ["zh", "zh-hant","zh-hans","en", "fr", "es", "it", "de", "ru", "pt"],
+    "ru": ["zh", "zh-hant","zh-hans","en", "fr", "es", "it", "de", "tr", "pt"],
+    "pt": ["zh", "zh-hant","zh-hans","en", "fr", "es", "it", "de", "tr", "ru"],
+    "vi": ["zh", "zh-hant","zh-hans","en"],
+    "id": ["zh", "zh-hant","zh-hans","en"],
+    "th": ["zh", "zh-hant","zh-hans","en"],
+    "ms": ["zh", "zh-hant","zh-hans","en"],
+    "ar": ["en"],
+    "hi": ["en"]
+  },
+  deeplx: common,
+  googlex: common,
+}
 
 exports.supportedLanguages = supportedLanguages;
-
+exports.langMap = langMap;
