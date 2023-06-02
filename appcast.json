@@ -2,6 +2,13 @@
   "identifier": "org.wiyi.plugin.transcat",
   "versions": [
     {
+     "version": "0.1.4",
+      "desc": "",
+      "sha256": "d21ef9f5c9eb70ef508d7cb2c1c67c8088eae3d18493c6d64b12611f29265acc",
+      "url": "https://github.com/xingty/bob-plugin-transcat/releases/download/v0.1.4/bob-plugin-transcat-v0.1.4.bobplugin",
+      "minBobVersion": "0.5.0"
+    },
+    {
      "version": "0.1.3",
       "desc": "修复单词统计问题",
       "sha256": "52770bdb310e8620e16c937ed81703c057ece269cd85b54adea25b0808eb837f",
