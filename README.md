@@ -20,9 +20,9 @@
 1. 安装transcat服务端
 2. 在transcat插件填入url地址
 
-![](https://user-images.githubusercontent.com/3600657/242315152-77b47dc6-1463-4fd6-9423-3fe28e6e228f.png)
+![](https://user-images.githubusercontent.com/3600657/244466143-a0740766-9104-43bd-a6c4-90f9fc3d9a34.png)
 
-
+![](https://user-images.githubusercontent.com/3600657/244465829-e54f000c-0bca-4c19-bdef-d57bc37a0047.png)
 
 ## 相关插件
 
