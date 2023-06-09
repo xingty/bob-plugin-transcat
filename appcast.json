@@ -3,7 +3,7 @@
   "versions": [
     {
      "version": "0.1.4",
-      "desc": "",
+      "desc": "修复bing无法翻译的问题",
       "sha256": "d21ef9f5c9eb70ef508d7cb2c1c67c8088eae3d18493c6d64b12611f29265acc",
       "url": "https://github.com/xingty/bob-plugin-transcat/releases/download/v0.1.4/bob-plugin-transcat-v0.1.4.bobplugin",
       "minBobVersion": "0.5.0"
