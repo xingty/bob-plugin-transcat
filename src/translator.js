@@ -1,10 +1,5 @@
 var request = require('./api-request')
 
-var HEADERS = {
-  "Content-Type": "application/json",
-  "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
-}
-
 async function translate(text,from='auto',to='auto') {
   let url = getUrl($option.url,$option.engine,$option.cache === 'yes');
   let body = {
@@ -12,12 +7,18 @@ async function translate(text,from='auto',to='auto') {
     "source_lang": from,
     "target_lang": to
   }
-  return doQuery(body,url);
+
+  let headers = {
+    "Content-Type": "application/json",
+    "Authorization": `Bearer ${$option.appKey}`
+  }
+
+  return doQuery(body,url,headers);
 }
 
-async function doQuery(body,url) {
+async function doQuery(body,url,headers) {
   try {
-    let resp = await request.query(body,url,'POST',HEADERS);
+    let resp = await request.query(body,url,'POST',headers);
     let result = resp.data;
     if (!('data' in result)) {
       return Promise.reject({

@@ -1,6 +1,6 @@
 {
 	"identifier": "org.wiyi.plugin.transcat",
-  "version": "0.1.4",
+  "version": "0.2.0",
 	"category": "translate",
 	"name": "Transcat",
 	"summary": "Transcat的Bob插件",
@@ -45,6 +45,11 @@
       "identifier": "microsoft",
       "type": "builtIn",
       "builtInId": "121"
+    },
+    {
+      "identifier": "openai",
+      "type": "file",
+      "filePath": "icon_openai.png"
     }
   ],
 	"author": "bigbyto",
@@ -61,6 +66,15 @@
         "placeholder": "http://127.0.0.1:8080",
         "type": "visible",
         "placeholderText": "transcat服务地址"
+      }
+    },
+    {
+      "identifier": "appKey",
+      "type": "text",
+      "title": "API KEY",
+      "desc": "必填项,transcat配置文件中的app_key",
+      "textConfig": {
+        "type": "secure"
       }
     },
     {
@@ -83,6 +97,11 @@
           "title": "微软翻译",
           "defaultPluginIconIdentifier": "microsoft",
           "value": "bingx"
+        },
+        {
+          "title": "OpenAI",
+          "defaultPluginIconIdentifier": "openai",
+          "value": "openai"
         },
         {
           "title": "DeepLX",
