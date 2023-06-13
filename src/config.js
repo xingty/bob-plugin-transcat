@@ -179,6 +179,7 @@ const langMap = {
   bingx: common,
   deeplx: common,
   googlex: common,
+  openai: common
 }
 
 exports.supportedLanguages = supportedLanguages;
