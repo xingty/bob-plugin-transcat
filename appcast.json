@@ -4,7 +4,7 @@
     {
      "version": "0.2.0",
       "desc": "1.添加认证功能 2.支持OpenAI翻译",
-      "sha256": "77048201f6efc05f3a341c43f640ab83841b252639d7d180a2aa1c4c692650af",
+      "sha256": "5ff20a451f76e5f5bc752c2acdefecddc78bdf279e384d14dc2532af4b5fb975",
       "url": "https://github.com/xingty/bob-plugin-transcat/releases/download/v0.2.0/bob-plugin-transcat-v0.2.0.bobplugin",
       "minBobVersion": "0.5.0"
     },
